@@ -13,7 +13,7 @@ struct Button {
     int y_pos;
     void (*handler)();
     int is_selected;
-    int default_color;
+    int color;
     int selected_color;
 };
 
@@ -36,7 +36,10 @@ void button_set_selected(struct Button * button, int is_selected);
 void button_set_handler(struct Button * button, void (*handler)());
 
 // Sets the color that the button will display as by default
-void set_default_color(int color);
+void set_color(struct Button * button, int color);
 
 // Sets the color that the button will display as when selected
-void set_selected_color(int color);
+void set_selected_color(struct Button * button, int color);
+
+// Places the Button on the screen
+void show_button(struct Button * button);

@@ -1,4 +1,6 @@
 #include "button.h"
+#include "../graphics/graphics.c"
+
 
 void button_init(struct Button * button, char * text, int x, int y, void (*handler)()) {
     button->text = text;
@@ -6,7 +8,7 @@ void button_init(struct Button * button, char * text, int x, int y, void (*handl
     button->y_pos = y;
     button->handler = handler;
     button->is_selected = 0;
-    button->default_color = 15;
+    button->color = 15;
     button->selected_color = 1;
 }
 
@@ -29,4 +31,19 @@ void button_set_selected(struct Button * button, int is_selected) {
 
 void button_set_handler(struct Button * button, void (*handler)()) {
     button->handler = handler;
+}
+
+void set_color(struct Button * button, int color)
+{
+    button->color = color;
+}
+
+void set_selected_color(struct Button * button, int color)
+{
+    button->selected_color = color;
+}
+
+void show_button(struct Button * button)
+{
+
 }
