@@ -1,5 +1,5 @@
 #include "button.h"
-#include "../graphics/graphics.c"
+#include "../../graphics/graphics.h"
 
 
 void button_init(struct Button * button, char * text, int x, int y, void (*handler)()) {
@@ -45,5 +45,17 @@ void set_selected_color(struct Button * button, int color)
 
 void show_button(struct Button * button)
 {
+    char * button_title = button->text;
+    int cursor_offset = 0;
+
+    while(*button_title != '\0')
+    {
+        set_cursor_pos(button->x_pos + cursor_offset, button->y_pos);
+        write_char(*button_title, button->color);
+        cursor_offset++;
+        *button_title++;
+
+    }    
+
 
 }
