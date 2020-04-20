@@ -2,18 +2,18 @@
 
 void player_init(struct Player* player)
 {
-    player->initial[0] = "";
-    player->initial[1] = "";
-    player->initial[2] = "";
+    player->initial[0] = ' ';
+    player->initial[1] = ' ';
+    player->initial[2] = ' ';
 
     player->currentScore = 0;
 
     player->highScore = 0;
 }
 
-char get_initial(struct Player currPlayer)
+char *  get_initial(struct Player * currPlayer)
 {
-    return currPlayer.initial;
+    return currPlayer->initial;
 }
 
 int get_current_score(struct Player currPlayer)
@@ -36,17 +36,14 @@ void set_initial(char *playerChar, struct Player *player)
         }
         player->initial[i] = playerChar[i];
     }
-    return;
 }
 
 void set_current_score(int cScore, struct Player *player)
 {
     player->currentScore = cScore;
-    return;
 }
 
 void set_high_score(int hScore, struct Player *player)
 {
     player->highScore = hScore;
-    return;
 }
