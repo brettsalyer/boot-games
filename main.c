@@ -1,5 +1,4 @@
-#include "src/button.h"
-#include "bullworm.h"
+#include "menu/button.h"
 
 int kernelmain(int argc, char **argv)
 {
@@ -13,6 +12,7 @@ int kernelmain(int argc, char **argv)
 	button_init(&quit_button, "Quit", 150, 40, 0x00);
 	button_init(&leaderboard_button, "Leaderboard", 150, 60, 0x00);
 
-	button_set_selected(&play_button,:q
+	button_set_selected(&play_button, 0);
 
+	return 0;
 }
